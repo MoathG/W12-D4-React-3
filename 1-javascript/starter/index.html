@@ -18,9 +18,7 @@
     // Log out each of the variables to the page
 
     const username = 'Moath';
-
     let loggedIn = true;
-
     let post = {
       id: 1,
       title: 'frozen',
@@ -39,6 +37,7 @@
     // Create a variable called message that can be reassigned
     // Use a template literal to create message like "Hi firstName lastName!"
     // Log out the message to the console
+
     const firstName = "Moath";
     const lastName = "Gharib";
     let message = `Hi ${firstName} ${lastName}`;
@@ -55,6 +54,10 @@
       return (
         `<p>${name}<p>`
       )
+    }
+
+    ArrowName = (name) => {
+      return name
     }
 
 
@@ -79,6 +82,9 @@
       }
     ];
 
+      posts.filter( post => {
+        post.title.search('post') !== -1
+      })
 
 
     // Practice 5 - DOM Creation
@@ -104,6 +110,18 @@
         title: "Last one"
       }
     ];
+
+    postsArray.map(post => {
+      const h2 = document.createElement('h2');
+      const a = document.createElement('a');
+      const title = document.createTextNode(post.title);
+      const link = post.slug;
+
+      a.href = link;
+      a.append(title);
+      h2.appendChild(a);
+      postsContainer.appendChild(h2);
+    })
 
 
   </script>

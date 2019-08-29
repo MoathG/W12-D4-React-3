@@ -16,15 +16,28 @@
     // Create a variable called pEl
     // Use createElement to create a paragraph element with text "Hello React."
 
+    let pE1 = React.createElement('p', 'Hello React.');
+
+
     // Practice #2
     // Create a variable called h1LinkEl
     // Use createElement to create an h1 element tag with a link inside of it
     // Make the link point to https://reactjs.org/ and include the text "React"
 
+    let a = React.createElement('a', {href: 'https://reactjs.org/'})
+    let h1LinkE1 = React.createElement('h1', a)
+
+
     // Practice #3
     // Create a component named "Header"
     // Have it return a header with an ID of "main" 
     // Include h1El and pEl inside of the header element
+
+    function Header() {
+      return (
+        React.createElement('header', {key: 1, id: 'main'},[pE1, h1LinkE1])
+      )
+    }
 
 
     // Practice #4
@@ -34,6 +47,13 @@
     // The first list item should be a link to the "React Docs" "https://reactjs.org/docs"
     // The second list item should be a link to the "ReactDOM Docs" overview "https://reactjs.org/docs/react-dom.html"
     // The third should be a link to a React related resource of your choice
+
+    const List = React.createElement('ul', {key: 2, className: 'react-links', id: 'top'},
+    [
+      React.createElement('li', {key: '1'}, React.createElement('a', {href: 'https://reactjs.org/docs'}, 'React Docs')),
+      React.createElement('li', {key: '2'}, React.createElement('a', {href: 'https://reactjs.org/docs/react-dom.html'}, 'ReactDOM Docs')),
+      React.createElement('li', {key: '3'}, React.createElement('a', {href: 'https://reactjs.org/community/routing.html'}, 'Routing'))
+    ])
 
 
     // Practice #5
